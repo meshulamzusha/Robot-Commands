@@ -27,7 +27,10 @@ class DeliveryRobot(MovableMixin, SpeakableMixin):
                     y = int(new_position[1])
                     super().move(x, y)
                 case 'WHERE':
-                    super().print_position()
+                    try:
+                        super().print_position()
+                    except AttributeError:
+                        print(f'unsupported command {command}')
                 case 'EXIT':
                     self.is_on = False
                     sys.exit()

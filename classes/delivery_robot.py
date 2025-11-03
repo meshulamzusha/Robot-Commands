@@ -23,9 +23,17 @@ class DeliveryRobot(MovableMixin, SpeakableMixin):
                         print(f'unsupported command {command}')
                 case 'MOVE':
                     new_position = parm.split()
-                    x = int(new_position[0])
-                    y = int(new_position[1])
-                    super().move(x, y)
+
+                    try:
+                        x = int(new_position[0])
+                        y = int(new_position[1])
+                    except (ValueError, IndexError):
+                        print('For moving enter your command like this MOVE <x> <Y>')
+                    else:
+                        try:
+                            super().move(x, y)
+                        except AttributeError:
+                            print(f'unsupported command {command}')
                 case 'WHERE':
                     try:
                         super().print_position()

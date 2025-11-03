@@ -7,4 +7,4 @@ class SpeakableMixin(Robot):
 
 
     def speak(self, msg) -> None:
-        print(f'{msg}')
+        print(f'{self.name} says {msg}')

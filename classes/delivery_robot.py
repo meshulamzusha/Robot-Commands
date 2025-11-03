@@ -17,7 +17,10 @@ class DeliveryRobot(MovableMixin, SpeakableMixin):
 
             match command:
                 case 'SAY':
-                    super().speak(parm)
+                    try:
+                        super().speak(parm)
+                    except AttributeError:
+                        print(f'unsupported command {command}')
                 case 'MOVE':
                     new_position = parm.split()
                     x = int(new_position[0])

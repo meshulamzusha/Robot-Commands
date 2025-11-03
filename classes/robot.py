@@ -3,6 +3,5 @@ class Robot:
         self.name = name
 
 
-    def _get_command(self) -> list[str]:
-        command = input(f'Give a command to {self.name}')
+    def _get_command(self, command) -> list[str]:
         return command.split(' ', 1)

@@ -6,7 +6,6 @@ from classes.speakable_mixin import SpeakableMixin
 class DeliveryRobot(MovableMixin, SpeakableMixin):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.is_on = True
 
 
     def robot_action(self):

@@ -9,7 +9,7 @@ class DeliveryRobot(MovableMixin, SpeakableMixin):
         self.is_on = True
 
 
-    def action(self):
+    def robot_action(self):
         while self.is_on:
             complete_command = super()._get_command(self)
             command = complete_command[0]

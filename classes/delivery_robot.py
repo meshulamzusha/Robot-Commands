@@ -10,7 +10,6 @@ class DeliveryRobot(MovableMixin, SpeakableMixin):
 
 
     def robot_action(self):
-        while self.is_on:
             complete_command = super()._get_command(self)
             command = complete_command[0]
             parm = complete_command[1]
@@ -40,7 +39,6 @@ class DeliveryRobot(MovableMixin, SpeakableMixin):
                     except AttributeError:
                         print(f'unsupported command {command}')
                 case 'EXIT':
-                    self.is_on = False
                     sys.exit()
                 case _:
                     print(f'command not found')

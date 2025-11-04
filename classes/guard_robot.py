@@ -8,10 +8,11 @@ class GuardRobot(SpeakableMixin):
         self.is_on = True
 
 
-    def robot_action(self):
-            complete_command = super()._get_command(self)
+    def robot_action(self, complete_command: list[str]):
             command = complete_command[0]
-            parm = complete_command[1]
+            
+            if len(complete_command) > 1:
+                parm = complete_command[1]
 
             match command:
                 case 'SAY':
